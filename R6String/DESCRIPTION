@@ -1,0 +1,16 @@
+Package: R6String
+Type: Package
+Title: R6 Implementation of Strings
+Version: 1.0.0
+Date: 2021-03-26
+Authors@R: person("Yoann", "Robin", email = "yoann.robin.k@gmail.com", role = c("aut", "cre"))
+Description: String are implemented in OOP way. The R6StringClass use build-in
+             function from R to provide an interface like python for string
+             manipulation.
+URL: https://github.com/yrobink/R6String
+Depends: R (>= 3.3)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports: methods, R6
+RoxygenNote: 7.1.1
