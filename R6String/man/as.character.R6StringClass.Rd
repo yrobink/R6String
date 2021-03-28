@@ -2,12 +2,14 @@
 % Please edit documentation in R/core.R
 \name{as.character.R6StringClass}
 \alias{as.character.R6StringClass}
-\title{as.character}
+\title{as.character.R6StringClass}
 \usage{
-\method{as.character}{R6StringClass}(str)
+as.character(x,...)
 }
 \arguments{
-\item{str}{[R6StringClass] string}
+\item{x}{[R6StringClass] string}
+
+\item{...}{[character] others}
 }
 \value{
 [character] The string

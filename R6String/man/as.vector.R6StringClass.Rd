@@ -2,15 +2,17 @@
 % Please edit documentation in R/core.R
 \name{as.vector.R6StringClass}
 \alias{as.vector.R6StringClass}
-\title{as.vector}
+\title{as.vector.R6StringClass}
 \usage{
-\method{as.vector}{R6StringClass}(str, mode)
+as.vector(x,mode)
 }
 \arguments{
-\item{str}{[R6StringClass] string}
+\item{x}{[R6StringClass] string}
+
+\item{mode}{[character]}
 }
 \value{
-[character] The string
+[character] base::c(The string)
 }
 \description{
 Override as.vector for R6StringClass

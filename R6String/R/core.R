@@ -303,11 +303,14 @@ R6StringClass = R6::R6Class( "R6StringClass" ,
 
 ## as.vector ##{{{
 
-#' as.vector
+#' as.vector.R6StringClass
 #'
 #' Override as.vector for R6StringClass
 #' 
-#' @param str [R6StringClass] string
+#' @usage as.vector(x,mode)
+#' 
+#' @param x [R6StringClass] string
+#' @param mode [character]
 #' 
 #' @return [character] base::c(The string)
 #' 
@@ -317,20 +320,23 @@ R6StringClass = R6::R6Class( "R6StringClass" ,
 #' as.vector(s)
 #'
 #' @export
-as.vector.R6StringClass = function( str , mode )
+as.vector.R6StringClass = function( x , mode )
 {
-	return(base::c(str$str))
+	return(base::c(x$str))
 }
 
 ##}}}
 
 ## as.character {{{
 
-#' as.character
+#' as.character.R6StringClass
 #'
 #' Override as.character for R6StringClass
 #' 
-#' @param str [R6StringClass] string
+#' @usage as.character(x,...)
+#'
+#' @param x [R6StringClass] string
+#' @param ... [character] others
 #' 
 #' @return [character] The string
 #' 
@@ -340,9 +346,9 @@ as.vector.R6StringClass = function( str , mode )
 #' as.character(s)
 #'
 #' @export
-as.character.R6StringClass = function( str )
+as.character.R6StringClass = function( x , ... )
 {
-	return(str$str)
+	return(x$str)
 }
 ##}}}
 

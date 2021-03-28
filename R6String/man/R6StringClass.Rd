@@ -24,7 +24,7 @@ R6String("_")$join( base::c( "Hello" , "world!" ) ) ## And we join with sep "_"
 s[3:7] ## Access to substring
 
 s = R6String("Hello world! How are you?")
-s$title() ## Uppercase for all words
+s$title() ## Capitalize for all words
 
 }
 \section{Active bindings}{
