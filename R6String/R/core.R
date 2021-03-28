@@ -45,7 +45,7 @@
 #' s[3:7] ## Access to substring
 #' 
 #' s = R6String("Hello world! How are you?")
-#' s$title() ## Uppercase for all words
+#' s$title() ## Capitalize for all words
 #'
 #' @export
 R6StringClass = R6::R6Class( "R6StringClass" ,
@@ -298,6 +298,51 @@ R6StringClass = R6::R6Class( "R6StringClass" ,
 `[.R6StringClass` = function( str , i )
 {
 	return( R6StringClass$new(base::substr(str$str,i[1],i[length(i)])) )
+}
+##}}}
+
+## as.vector ##{{{
+
+#' as.vector
+#'
+#' Override as.vector for R6StringClass
+#' 
+#' @param str [R6StringClass] string
+#' 
+#' @return [character] base::c(The string)
+#' 
+#' @examples
+#'
+#' s   = R6String("Hello")
+#' as.vector(s)
+#'
+#' @export
+as.vector.R6StringClass = function( str , mode )
+{
+	return(base::c(str$str))
+}
+
+##}}}
+
+## as.character {{{
+
+#' as.character
+#'
+#' Override as.character for R6StringClass
+#' 
+#' @param str [R6StringClass] string
+#' 
+#' @return [character] The string
+#' 
+#' @examples
+#'
+#' s   = R6String("Hello")
+#' as.character(s)
+#'
+#' @export
+as.character.R6StringClass = function( str )
+{
+	return(str$str)
 }
 ##}}}
 

@@ -49,3 +49,5 @@ s[3:7] ## Access to substring
 s = R6String("Hello world! How are you?")
 s$title() ## Uppercase for all words
 
+print(as.character(s))
+
