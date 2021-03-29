@@ -4,7 +4,7 @@
 \alias{as.vector.R6StringClass}
 \title{as.vector.R6StringClass}
 \usage{
-as.vector(x,mode)
+\method{as.vector}{R6StringClass}(x, mode)
 }
 \arguments{
 \item{x}{[R6StringClass] string}

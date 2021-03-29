@@ -4,7 +4,7 @@
 \alias{as.character.R6StringClass}
 \title{as.character.R6StringClass}
 \usage{
-as.character(x,...)
+\method{as.character}{R6StringClass}(x, ...)
 }
 \arguments{
 \item{x}{[R6StringClass] string}

@@ -307,7 +307,7 @@ R6StringClass = R6::R6Class( "R6StringClass" ,
 #'
 #' Override as.vector for R6StringClass
 #' 
-#' @usage as.vector(x,mode)
+#' @method as.vector R6StringClass
 #' 
 #' @param x [R6StringClass] string
 #' @param mode [character]
@@ -333,7 +333,7 @@ as.vector.R6StringClass = function( x , mode )
 #'
 #' Override as.character for R6StringClass
 #' 
-#' @usage as.character(x,...)
+#' @method as.character R6StringClass
 #'
 #' @param x [R6StringClass] string
 #' @param ... [character] others
