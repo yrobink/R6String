@@ -51,3 +51,13 @@ s$title() ## Uppercase for all words
 
 print(as.character(s))
 
+s = R6String("_{}_{}_{}")$format( list("d","a","b") )
+print(s)
+s = R6String("_{}_{}_")$format( list("d","a") )
+print(s)
+s = R6String("{}_{}_{}_")$format( list("d","a","b") )
+print(s)
+s = R6String("{}")$format( list("d") )
+print(s)
+
+
