@@ -19,6 +19,8 @@ s[3:7] ## Access to substring
 
 s = R6String("Hello world! How are you?")
 s$title() ## Capitalize for all words
+
+s = R6String("{} {}!")$format("Hello","world") ## Formatting
 ~~~
 
 ## Installation
