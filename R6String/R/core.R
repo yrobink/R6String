@@ -274,7 +274,7 @@ R6StringClass = R6::R6Class( "R6StringClass" ,
 #' @export
 `+.R6StringClass` = function( str1 , str2 )
 {
-	str = R6StringClass$new(str1$str)
+	str = R6StringClass$new(as.character(str1))
 	return(str$concatenate(str2))
 }
 ##}}}
