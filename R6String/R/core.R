@@ -204,7 +204,7 @@ R6StringClass = R6::R6Class( "R6StringClass" ,
 	},
 	##}}}
 	
-	## uper ##{{{
+	## upper ##{{{
 	
 	#' @description
 	#' Return a copy converted to uppercase
