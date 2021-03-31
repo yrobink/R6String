@@ -14,7 +14,7 @@ s$replace( " " , "-" ) ## we can replace the space by "-"
 s$replace("!","") + " " + "with R6String!" ## Transform to "Hello world with R6String!"
 s$lower() ## All in lowercase
 s$upper() ## And all in uppercase
-R6String("_")$join( base::c( "Hello" , "world!" ) ) ## And we join with sep "_"
+R6String("_")$join( "Hello" , "world!" ) ## And we join with sep "_"
 s[3:7] ## Access to substring
 
 s = R6String("Hello world! How are you?")

@@ -41,7 +41,7 @@
 #' s$replace("!","") + " " + "with R6String!" ## Transform to "Hello world with R6String!"
 #' s$lower() ## All in lowercase
 #' s$upper() ## And all in uppercase
-#' R6String("_")$join( base::c( "Hello" , "world!" ) ) ## And we join with sep "_"
+#' R6String("_")$join( "Hello" , "world!" ) ## And we join with sep "_"
 #' s[3:7] ## Access to substring
 #' 
 #' s = R6String("Hello world! How are you?")
@@ -185,10 +185,15 @@ R6StringClass = R6::R6Class( "R6StringClass" ,
 	
 	#' @description
 	#' Concatenate a list of string.
-	#' @param iter [list or vector] List or vector of string to concatenate
+	#' @param ... [character or R6String] Any numbers of character or R6String
 	#' @return self
-	join = function( iter )
+	join = function(...)
 	{
+		iter = list(...)
+		if( length(iter) == 1 )
+		{
+			iter = iter[[1]]
+		}
 		str = R6StringClass$new("")
 		for( s in iter )
 		{

@@ -1,7 +1,7 @@
 Package: R6String
 Type: Package
 Title: R6 Implementation of Strings
-Version: 1.2.0
+Version: 1.2.1
 Date: 2021-03-26
 Authors@R: person("Yoann", "Robin", email = "yoann.robin.k@gmail.com", role = c("aut", "cre"))
 Description: String are implemented in OOP way. The R6StringClass use build-in
