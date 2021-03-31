@@ -47,6 +47,8 @@
 #' s = R6String("Hello world! How are you?")
 #' s$title() ## Capitalize for all words
 #'
+#' s = R6String("{}_{}")$format("a","b") ## "a_b"
+#'
 #' @export
 R6StringClass = R6::R6Class( "R6StringClass" ,
 	
@@ -245,6 +247,42 @@ R6StringClass = R6::R6Class( "R6StringClass" ,
 		for( i in 1:length(split) )
 			splitc = base::c( splitc , split[[i]]$capitalize() )
 		return( R6StringClass$new(sep)$join(splitc) )
+	},
+	##}}}
+	
+	## format ##{{{
+	
+	#' @description
+	#' Format a string by changing all "{}" to values given in l_str
+	#' @param ... [String] String used to format
+	#' @return [R6StringClass]
+	format = function(...)
+	{
+		l_str = unlist(list(...))
+		
+		out = R6StringClass$new(as.character(self))
+		if( out[1:2] == "{}" )
+		{
+			out = l_str[1] + out[3:out$size]
+			l_str = l_str[-1]
+		}
+		if( out[(out$size-1):out$size] == "{}" )
+		{
+			out = out[1:(out$size-2)] + l_str[length(l_str)]
+			l_str = l_str[-length(l_str)]
+		}
+		
+		if( length(l_str) > 0 )
+		{
+			split = out$split("[{][}]")
+			out = split[[1]]
+			for( i in 2:length(split) )
+			{
+				out = out + l_str[i-1] + split[[i]]
+			}
+		}
+		
+		return(out)
 	}
 	##}}}
 	
@@ -374,3 +412,14 @@ R6String = function( str = "" )
 }
 ##}}}
 
+## Overload logical operator {{{
+
+#' @export
+`Ops.R6StringClass` = function(e1,e2)
+{
+	return(callGeneric(as.character(e1),as.character(e2)))
+}
+##}}}
+
+
+##

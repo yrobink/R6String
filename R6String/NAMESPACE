@@ -2,6 +2,7 @@
 
 S3method("+",R6StringClass)
 S3method("[",R6StringClass)
+S3method(Ops,R6StringClass)
 S3method(as.character,R6StringClass)
 S3method(as.vector,R6StringClass)
 export(R6String)

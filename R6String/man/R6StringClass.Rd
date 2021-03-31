@@ -26,6 +26,8 @@ s[3:7] ## Access to substring
 s = R6String("Hello world! How are you?")
 s$title() ## Capitalize for all words
 
+s = R6String("{}_{}")$format("a","b") ## "a_b"
+
 }
 \section{Active bindings}{
 \if{html}{\out{<div class="r6-active-bindings">}}
@@ -49,6 +51,7 @@ s$title() ## Capitalize for all words
 \item \href{#method-lower}{\code{R6StringClass$lower()}}
 \item \href{#method-capitalize}{\code{R6StringClass$capitalize()}}
 \item \href{#method-title}{\code{R6StringClass$title()}}
+\item \href{#method-format}{\code{R6StringClass$format()}}
 \item \href{#method-clone}{\code{R6StringClass$clone()}}
 }
 }
@@ -216,6 +219,26 @@ Transform to title (i.e. all characters after sep are in uppercase, others in lo
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{sep}}{[R6StringClass or character] separator}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+[R6StringClass]
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-format"></a>}}
+\if{latex}{\out{\hypertarget{method-format}{}}}
+\subsection{Method \code{format()}}{
+Format a string by changing all "{}" to values given in l_str
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{R6StringClass$format(...)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{[String] String used to format}
 }
 \if{html}{\out{</div>}}
 }
